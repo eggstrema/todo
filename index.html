@@ -32,11 +32,12 @@
         </div>
       </div>
 
-      <div class="input-group mb-3 col-3 bg-light p-3 border">
-        <input type="text" ng-model="todoList.todoText" class="form-control" placeholder="add new todo here" aria-label="add new todo here" aria-describedby="button-addon2">
-        <button ng-click="todoList.addTodo()" class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
-      </div>
-        
+      <div class="row g-3 align-items-center">
+        <div class="input-group">
+          <input type="text" ng-model="todoList.todoText" class="form-control" placeholder="add new todo here" aria-label="add new todo here" aria-describedby="button-addon2">
+          <button ng-click="todoList.addTodo()" class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
+        </div>
+      </div>        
     </div>
   </body>
 </html>
