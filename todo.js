@@ -7,6 +7,7 @@ angular.module('todoApp', [])
  
     todoList.addTodo = function() {
       todoList.todos.push({text:todoList.todoText, done:false});
+      alert('>' + JSON.stringify(todoList.todos) + '<');
       todoList.todoText = '';
     };
  
