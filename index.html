@@ -32,11 +32,11 @@
         </div>
       </div>
 
-      <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
+      <div class="input-group mb-3">
+        <input type="text" ng-model="todoList.todoText" class="form-control" placeholder="add new todo here" aria-label="add new todo here" aria-describedby="button-addon2">
+        <button ng-click="todoList.addTodo()" class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
+      </div>
+        
     </div>
   </body>
 </html>
