@@ -13,31 +13,35 @@
   </head>
 
   <body>
-    <h2>Todo</h2>
-    <div ng-controller="TodoListController as todoList">
-      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
-      
-      <div class="container">
-        <div class="row">
-          <div class="col-3" ng-repeat="todo in todoList.todos">
-            <li>
-              <label class="checkbox">
-                <input type="checkbox" ng-model="todo.done">
-                <span>{{todo.text}}</span>
-              </label>
-            </li>            
+    <div class="row justify-content-center">
+      <div style="width: 10rem;">
+        <h2>Todo</h2>
+        <div ng-controller="TodoListController as todoList">
+          <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+          [ <a href="" ng-click="todoList.archive()">archive</a> ]
+
+          <div class="container">
+            <div class="row">
+              <div class="col-3" ng-repeat="todo in todoList.todos">
+                <li>
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model="todo.done">
+                    <span>{{todo.text}}</span>
+                  </label>
+                </li>            
+              </div>
+            </div>
           </div>
+
+          <ul class="unstyled">
+          </ul>
+          <form ng-submit="todoList.addTodo()">
+            <input type="text" ng-model="todoList.todoText"  size="30"
+                   placeholder="add new todo here">
+            <input class="btn-primary" type="submit" value="add">
+          </form>
         </div>
       </div>
-      
-      <ul class="unstyled">
-      </ul>
-      <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
     </div>
   </body>
 </html>
