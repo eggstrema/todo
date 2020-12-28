@@ -16,16 +16,11 @@
     <h1 class="text-center">So Much To Do</h1>
     
     <div ng-controller="TodoListController as todoList">
-      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
 
       <div class="container">
         <div class="row">
           <div class="col-3 alert alert-info m-2" ng-repeat="todo in todoList.todos">
-            <label class="checkbox">
-              <input type="checkbox" ng-model="todo.done">
-              <span>{{todo.text}}</span>
-            </label>
+            <span>{{todo.text}}</span>
           </div>
         </div>
       </div>
