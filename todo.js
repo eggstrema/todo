@@ -2,29 +2,14 @@ angular.module('todoApp', [])
   .controller('TodoListController', function() {
     var todoList = this;
     todoList.todos = [
-      {text:'take out the trash', done:true},
-      {text:'do the laundry', done:true},
-      {text:'call my dentist', done:true},
-      {text:'go for a run', done:false}];
+      {text:'take out the trash'},
+      {text:'do the laundry'},
+      {text:'call my dentist'},
+      {text:'go for a run'}];
  
     todoList.addTodo = function() {
-      todoList.todos.push({text:todoList.todoText, done:false});
+      todoList.todos.push({text:todoList.todoText});
       todoList.todoText = '';
     };
  
-    todoList.remaining = function() {
-      var count = 0;
-      angular.forEach(todoList.todos, function(todo) {
-        count += todo.done ? 0 : 1;
-      });
-      return count;
-    };
- 
-    todoList.archive = function() {
-      var oldTodos = todoList.todos;
-      todoList.todos = [];
-      angular.forEach(oldTodos, function(todo) {
-        if (!todo.done) todoList.todos.push(todo);
-      });
-    };
   });
