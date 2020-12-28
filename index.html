@@ -17,13 +17,21 @@
     <div ng-controller="TodoListController as todoList">
       <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
       [ <a href="" ng-click="todoList.archive()">archive</a> ]
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-3" ng-repeat="todo in todoList.todos">
+            <li>
+              <label class="checkbox">
+                <input type="checkbox" ng-model="todo.done">
+                <span>{{todo.text}}</span>
+              </label>
+            </li>            
+          </div>
+        </div>
+      </div>
+      
       <ul class="unstyled">
-        <li ng-repeat="todo in todoList.todos">
-          <label class="checkbox">
-            <input type="checkbox" ng-model="todo.done">
-            <span>{{todo.text}}</span>
-          </label>
-        </li>
       </ul>
       <form ng-submit="todoList.addTodo()">
         <input type="text" ng-model="todoList.todoText"  size="30"
