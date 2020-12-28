@@ -21,13 +21,11 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-3" ng-repeat="todo in todoList.todos">
-            <li>
-              <label class="checkbox">
-                <input type="checkbox" ng-model="todo.done">
-                <span>{{todo.text}}</span>
-              </label>
-            </li>            
+          <div class="col-3 alert alert-info" ng-repeat="todo in todoList.todos">
+            <label class="checkbox">
+              <input type="checkbox" ng-model="todo.done">
+              <span>{{todo.text}}</span>
+            </label>
           </div>
         </div>
       </div>
