@@ -19,21 +19,27 @@ angular.module('todoApp', [])
 
     };
 
-    todoList.load = function() {
-      serialized = localStorage.getItem("todos");
-
-      if (serialized) { 		   
-        list = JSON.parse(serialized);;
-        for (let i = 0; i < list.length; i++) {
-          todoList.todos.push({text:list[i].text});
-        }
-
+    todoList.load = function() {      
+      stored = localStorage.getItem("todos");
+      if (stored) { 		   
+        todoList.deserialize(stored);
       } else {
-        todoList.todos.push({text:'take out the trash'});
-        todoList.todos.push({text:'do the laundry'});
-        todoList.todos.push({text:'call my dentist'});
-        todoList.todos.push({text:'go for a run'});
+        todoList.createSomeSamples();
       }
+    };
+
+    todoList.deserialize = function(serialized) {
+      list = JSON.parse(serialized);
+      for (let i = 0; i < list.length; i++) {
+        todoList.todos.push({text:list[i].text});
+      }    
+    };
+
+    todoList.createSomeSamples = function() {
+      todoList.todos.push({text:'take out the trash'});
+      todoList.todos.push({text:'do the laundry'});
+      todoList.todos.push({text:'call my dentist'});
+      todoList.todos.push({text:'go for a run'});
     };
 
     todoList.load();
