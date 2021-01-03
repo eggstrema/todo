@@ -13,7 +13,7 @@ angular.module('todoApp', [])
       clone = [];
       for (let i = 0; i < todoList.todos.length; i++) {
         clone.push({ text: todoList.todos[i].text});
-	    }
+      }
       serialized = JSON.stringify(clone);
       localStorage.setItem("todos", serialized);
 
